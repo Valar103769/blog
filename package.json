@@ -5,11 +5,32 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev  docs --open",
-    "docs:build": "vuepress build docs"
+    "build": "vuepress build docs"
   },
   "devDependencies": {
-    "eslint": "^7.2.0",
+    "codesandbox": "^2.1.16",
+    "eslint": "^7.3.0",
+    "markdown-it-custom-block": "^0.1.1",
     "standardjs": "^1.0.0-alpha",
     "vuepress": "^1.5.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extend": [
+      "standard",
+      "plugin:vue/recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "dependencies": {
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

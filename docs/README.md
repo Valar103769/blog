@@ -3,7 +3,6 @@ home: true
 heroImage: /logo.png
 heroText: Hero 标题
 title: Blog
-lang: zh_CN
 tagline: Hero 副标题
 actionText: 快速上手 →
 actionLink: ./vue/basics.md
