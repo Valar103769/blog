@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /logo.png
-heroText: Hero 标题
+heroText: valar的blog
 title: Blog
-tagline: Hero 副标题
-actionText: 快速上手 →
+tagline: 路漫漫其修远兮,吾将上下而求索
+actionText: just do it →
 actionLink: ./vue/basics.md
 features:
 - title: 简洁至上
@@ -16,4 +16,4 @@ features:
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
 
-## Getting Started
+[地址](https://valar103769.github.io/blog/)

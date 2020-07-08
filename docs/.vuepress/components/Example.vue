@@ -132,7 +132,8 @@ export default {
       // this.$refs.codepen.submit();
     },
     codesandbox() {
-      const source = this.$refs.content.innerText;
+        
+          const source = this.$refs.content.innerText;
       this.$refs.codesandboxInput.value = makeExample(source);
       this.$refs.codesandbox.submit();
     },

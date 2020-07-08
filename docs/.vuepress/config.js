@@ -9,6 +9,14 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/logo.gif' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    // ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'apple-touch-icon', href: '/icons/apple-icon-152x152.png' }],
+    // ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/icons/ms-icon-144x144.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
 themeConfig: {
     repo: 'valar103769/blog',
@@ -43,7 +51,7 @@ themeConfig: {
         children: [
           '/library/sortableJS',
       
-        ] 
+            ] 
       },
       {
         title:'其他',
@@ -52,6 +60,9 @@ themeConfig: {
         children: [
           '/else/移动端适配',
       
+
+
+
         ] 
       },
     ]
@@ -81,5 +92,10 @@ themeConfig: {
         }
       });
     }
-  }
+  },
+  plugins:['@vuepress/pwa',{
+    serverWorker:true,
+    updatePopup:true
+  }]
 }
+

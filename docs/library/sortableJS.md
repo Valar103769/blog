@@ -1,7 +1,5 @@
 # sortableJS
 
-## el-table的拖拽排序
-
   毋庸置疑,使用[sortablejs](https://github.com/SortableJS/Sortable), 官方也提供了vue版本,[Vue.Draggable](https://github.com/SortableJS/Vue.Draggable),
 
   本来是想用vueDraggable的, 但是看了下文档, 貌似只能使用darggable做容器, 那么就不能使用el-table了, 与elementui不相容, 遂放弃
@@ -20,7 +18,7 @@
   - **$nextTick**: 如果需要在数据变更之后操作dom的,需要使用$nextTick,
   - **绑定key**: 为每个item设置唯一值, el-table的`row-key="id"`
 
-### 请求数据
+## 请求数据
 
 实际项目中请求数据的方法是一个通用方法, 其在created生命周期里调用. 所以当数据来临的时候,组件可能并没有mounted, 
 
@@ -49,7 +47,7 @@
   ```
 
 
-### $nextTick
+## $nextTick
 ```js{16}
 import Sortable from 'sortablejs'
 
