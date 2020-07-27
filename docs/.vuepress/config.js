@@ -50,7 +50,10 @@ themeConfig: {
         sidebarDepth: 1,
         children: [
           '/library/sortableJS',
-      
+          '/library/Export2Excel',
+
+          '/library/Recommend',
+          '/library/Video'
             ] 
       },
       {
