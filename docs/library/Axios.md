@@ -147,6 +147,15 @@ axios.post('https://example.com', form, { headers: form.getHeaders() })
       form.append(k, f, fileName)
  ```
 
+ 最后, 记录一个file转base64的代码
+ ```js
+
+ const mime = require('mime-types') 
+   const f = fs.createReadStream('./static/xxx.png')
+    const data = Buffer.from(f).toString('base64')
+    const base64 = 'data:' + mime.lookup(v) + ';base64,' + data
+ ```
+
 
 
 
