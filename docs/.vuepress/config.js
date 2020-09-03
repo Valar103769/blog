@@ -51,8 +51,9 @@ themeConfig: {
         children: [
           '/library/sortableJS',
           '/library/Export2Excel',
-
+          '/library/RichText',
           '/library/Recommend',
+          '/library/Prismjs',
           '/library/Video'
             ] 
       },
@@ -62,9 +63,6 @@ themeConfig: {
         sidebarDepth: 1,
         children: [
           '/else/移动端适配',
-      
-
-
 
         ] 
       },
