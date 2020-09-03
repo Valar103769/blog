@@ -49,6 +49,7 @@ themeConfig: {
         collapsable: false,
         sidebarDepth: 1,
         children: [
+          '/library/Axios',
           '/library/sortableJS',
           '/library/Export2Excel',
           '/library/RichText',
