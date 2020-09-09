@@ -64,7 +64,7 @@ themeConfig: {
         sidebarDepth: 1,
         children: [
           '/else/移动端适配',
-
+          '/else/babel',
         ] 
       },
     ]
