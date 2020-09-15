@@ -65,6 +65,15 @@ themeConfig: {
         children: [
           '/else/移动端适配',
           '/else/babel',
+          '/else/bug',
+        ] 
+      },
+      {
+        title:'life',
+        collapsable: false,
+        sidebarDepth: 1,
+        children: [
+        '/life/docs'
         ] 
       },
     ]
@@ -82,6 +91,7 @@ themeConfig: {
         return acc;
       }, {});
 
+
       md.use(require('markdown-it-custom-block'), {
         example(arg) {
           const source = examples[arg];
@@ -90,6 +100,15 @@ themeConfig: {
             <Example name="${arg}">
               <template #source>${source}</template>
             </Example>
+          `;
+        },
+        show(arg) {
+          const source = examples[arg];
+
+          return `
+            <Show name="${arg}">
+              <template #source>${source}</template>
+            </Show>
           `;
         }
       });

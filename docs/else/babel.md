@@ -43,8 +43,64 @@ module.exports = {
 }
 ```
 
-## 优化polyfill
+## 优化polyfill, 兼容ie11
 
  一般来说, 每一个`polyfill`都是下载到`dependencies`, 会导致在支持的浏览器下,也会打包不需要的polyfill文件, 优化的方式是:
 
+代码里手动判断浏览器, 使用js的原因是ie11不支持条件注释表达式
+```html
+ // index.html
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="icon" href="/images/icon.png" type="image/x-icon" />
+
+<script>
+    // if ie
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        var scriptDom = document.createElement('script')
+        scriptDom.src = '/js/polyfill/intersection-observer.js'
+        var firstScript= document.getElementsByTagName('SCRIPT')[0]
+        document.head.insertBefore(scriptDom, firstScript)
+    }
+</script>
+
+<% for (let css in htmlWebpackPlugin.files.css) { %>
+<link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[css] %>">
+<% } %>
+
+
+<script type="text/javascript" src="/js/cdn/jquery/1.11.1/jquery.min.js"></script>
+<% for (let js in htmlWebpackPlugin.files.js) { %>
+<script src="<%= htmlWebpackPlugin.files.js[js] %>" defer></script>
+<% } %>
+<!--<#if !_isProd>-->
+<script src="<%= htmlWebpackPlugin.files.js[htmlWebpackPlugin.files.js.length-1].replace(/\.[\dabcdef]*?\./,'.') %>" defer></script>
+
+<!--</#if>-->
+
+```
+
+
+# ie11的css
+注意顺序, query `min-width`时, 则 小的`@media`表达式写在前
+
+```css
+ @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width:1024px) {
+            .ie-section {
+                width:960px;
+            }
+        }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width:1216px) {
+            .ie-section {
+                width:1152px;
+            }
+        }
+        @media screen and (-ms-high-contrast: active) ,
+                            (-ms-high-contrast: none)
+                        and (min-width:1408px) {
+                            .ie-section {
+                                width:1344px;
+                            }
+        }
+```
 
