@@ -73,7 +73,8 @@ themeConfig: {
         collapsable: false,
         sidebarDepth: 1,
         children: [
-        '/life/docs'
+        '/life/docs',
+        '/life/20200913'
         ] 
       },
     ]

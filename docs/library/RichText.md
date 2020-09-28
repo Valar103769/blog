@@ -111,6 +111,15 @@ tinymce: 安装引用困难. 有js版本和vue版本, vue版本有个坑, 平时
         loading: true
       }
     },
+    methods:{
+          getImgs(){
+       return Array.from(window.tinymce.get(this.tinymceId).getDoc().querySelectorAll('img')).reduce((accu, curr)=>{
+         const src = new URL(curr.src).pathname.slice(1)
+         accu.push(src)
+          return accu
+        },[])
+      },
+    }
   }
 </script>
 

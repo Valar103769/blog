@@ -6,6 +6,7 @@
 
 ```bash
 yarn add prismjs
+yarn add babel-plugin-prismjs -D
 ```
 
 使用方式
